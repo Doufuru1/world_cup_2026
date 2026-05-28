@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORLD CUP 2026 - 链上世界杯赛事金融协议</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-futbol"></i>
+                <span>WORLD CUP 2026</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">首页</a>
+                <a href="#matches">赛事预测</a>
+                <a href="#champion">冠军池</a>
+                <a href="#dashboard">数据看板</a>
+            </div>
+            <div class="wallet-section">
+                <button id="connectWallet" class="btn-wallet">
+                    <i class="fas fa-wallet"></i>
+                    <span>连接钱包</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🔥 链上世界杯赛事金融协议</div>
+            <h1 class="hero-title">WORLD CUP 2026</h1>
+            <p class="hero-subtitle">基于 FIFA 世界杯 48队 / 104场比赛 的链上资金收敛系统</p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalPool">$0</div>
+                    <div class="stat-label">总奖池</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="matchCount">104</div>
+                    <div class="stat-label">场比赛</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="participantCount">0</div>
+                    <div class="stat-label">参与者</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="lockAmount">0</div>
+                    <div class="stat-label">锁仓总量</div>
+                </div>
+            </div>
+            <div class="countdown-section">
+                <div class="countdown-label">世界杯开幕倒计时</div>
+                <div class="countdown-timer" id="countdown">
+                    <div class="time-unit">
+                        <span class="time-value" id="days">00</span>
+                        <span class="time-label">天</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="hours">00</span>
+                        <span class="time-label">时</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="minutes">00</span>
+                        <span class="time-label">分</span>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="seconds">00</span>
+                        <span class="time-label">秒</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <a href="#matches" class="btn-primary">
+                    <i class="fas fa-play"></i>
+                    开始预测
+                </a>
+                <a href="#champion" class="btn-secondary">
+                    <i class="fas fa-trophy"></i>
+                    冠军池
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics 区 -->
+    <section class="tokenomics">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-coins"></i>
+                Tokenomics
+            </h2>
+            <div class="token-grid">
+                <div class="token-card">
+                    <div class="token-icon"><i class="fas fa-fire"></i></div>
+                    <div class="token-value">1%</div>
+                    <div class="token-label">回购销毁</div>
+                    <div class="token-desc">通缩机制，价值捕获</div>
+                </div>
+                <div class="token-card highlight">
+                    <div class="token-icon"><i class="fas fa-trophy"></i></div>
+                    <div class="token-value">1%</div>
+                    <div class="token-label">比赛奖池</div>
+                    <div class="token-desc">104场比赛奖励分配</div>
+                </div>
+                <div class="token-card">
+                    <div class="token-icon"><i class="fas fa-crown"></i></div>
+                    <div class="token-value">1%</div>
+                    <div class="token-label">冠军池基金</div>
+                    <div class="token-desc">最终冠军结算池</div>
+                </div>
+            </div>
+            <div class="tax-info">
+                <span class="tax-badge">3% 交易税</span>
+                <span class="tax-desc">每笔交易自动分配至三大池</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛事预测区 -->
+    <section id="matches" class="matches">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-futbol"></i>
+                赛事预测市场
+            </h2>
+            <div class="matches-filter">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="live">进行中</button>
+                <button class="filter-btn" data-filter="upcoming">即将开始</button>
+                <button class="filter-btn" data-filter="finished">已结束</button>
+            </div>
+            <div class="matches-grid" id="matchesGrid">
+                <!-- 比赛卡片将通过JS动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 冠军池区 -->
+    <section id="champion" class="champion">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-crown"></i>
+                冠军池系统
+            </h2>
+            <div class="champion-content">
+                <div class="champion-pool">
+                    <div class="pool-header">
+                        <h3>冠军奖池</h3>
+                        <div class="pool-amount" id="championPool">$0</div>
+                    </div>
+                    <div class="pool-distribution">
+                        <div class="dist-item">
+                            <div class="dist-bar" style="width: 70%"></div>
+                            <div class="dist-info">
+                                <span>冠军用户奖励</span>
+                                <span>70%</span>
+                            </div>
+                        </div>
+                        <div class="dist-item">
+                            <div class="dist-bar secondary" style="width: 20%"></div>
+                            <div class="dist-info">
+                                <span>回购销毁</span>
+                                <span>20%</span>
+                            </div>
+                        </div>
+                        <div class="dist-item">
+                            <div class="dist-bar tertiary" style="width: 10%"></div>
+                            <div class="dist-info">
+                                <span>再投资</span>
+                                <span>10%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lock-section">
+                    <h3>锁仓参与</h3>
+                    <div class="lock-info">
+                        <p>锁仓时间越长，权重越高（1x → 10x）</p>
+                        <div class="lock-tiers">
+                            <div class="tier">
+                                <span class="tier-days">1-5天</span>
+                                <span class="tier-fee">6% 赎回费</span>
+                            </div>
+                            <div class="tier">
+                                <span class="tier-days">6-10天</span>
+                                <span class="tier-fee">5% 赎回费</span>
+                            </div>
+                            <div class="tier">
+                                <span class="tier-days">11-20天</span>
+                                <span class="tier-fee">3-4% 赎回费</span>
+                            </div>
+                            <div class="tier">
+                                <span class="tier-days">21-30天</span>
+                                <span class="tier-fee">2% 赎回费</span>
+                            </div>
+                            <div class="tier">
+                                <span class="tier-days">31-40天</span>
+                                <span class="tier-fee">1-1.5% 赎回费</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lock-action">
+                        <input type="number" id="lockAmount" placeholder="输入锁仓数量" class="input-field">
+                        <select id="lockPeriod" class="select-field">
+                            <option value="5">5天 (1x权重)</option>
+                            <option value="10">10天 (2x权重)</option>
+                            <option value="20">20天 (5x权重)</option>
+                            <option value="40">40天 (10x权重)</option>
+                        </select>
+                        <button class="btn-primary" onclick="lockTokens()">
+                            <i class="fas fa-lock"></i>
+                            立即锁仓
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据看板 -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line"></i>
+                协议数据看板
+            </h2>
+            <div class="dashboard-grid">
+                <div class="dash-card">
+                    <h4>资金飞轮</h4>
+                    <div class="flywheel">
+                        <div class="flywheel-step">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>交易</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flywheel-step">
+                            <i class="fas fa-percentage"></i>
+                            <span>税收</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flywheel-step">
+                            <i class="fas fa-trophy"></i>
+                            <span>奖池</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flywheel-step">
+                            <i class="fas fa-users"></i>
+                            <span>参与</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flywheel-step">
+                            <i class="fas fa-lock"></i>
+                            <span>锁仓</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flywheel-step">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                            <span>收敛</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                        <div class="flywheel-step">
+                            <i class="fas fa-crown"></i>
+                            <span>结算</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-card">
+                    <h4>热门比赛权重</h4>
+                    <div class="weight-formula">
+                        <div class="formula">
+                            Match Weight = 热度×0.3 + 阶段×0.2 + 资金×0.4 + 社区×0.1
+                        </div>
+                        <div class="weight-range">
+                            <span>最高倍率: <strong>10x</strong></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-card">
+                    <h4>协议统计</h4>
+                    <div class="stats-list">
+                        <div class="stat-row">
+                            <span>总交易量</span>
+                            <span id="totalVolume">$0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>已销毁代币</span>
+                            <span id="burnedTokens">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>活跃预测</span>
+                            <span id="activePredictions">0</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>平均锁仓时长</span>
+                            <span id="avgLockTime">0天</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-futbol"></i>
+                    <span>WORLD CUP 2026</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="footer-text">
+                    <p>基于 PGP Chain 构建的链上世界杯赛事金融协议</p>
+                    <p>© 2026 WORLD CUP Protocol. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 预测弹窗 -->
+    <div id="predictModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>比赛预测</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="match-teams">
+                    <div class="team" id="teamA">
+                        <div class="team-flag">🇧🇷</div>
+                        <div class="team-name">巴西</div>
+                    </div>
+                    <div class="match-vs">VS</div>
+                    <div class="team" id="teamB">
+                        <div class="team-flag">🇦🇷</div>
+                        <div class="team-name">阿根廷</div>
+                    </div>
+                </div>
+                <div class="predict-options">
+                    <button class="predict-btn" data-result="win">
+                        <span class="predict-label">主胜</span>
+                        <span class="predict-odds" id="oddsWin">2.5x</span>
+                    </button>
+                    <button class="predict-btn" data-result="draw">
+                        <span class="predict-label">平局</span>
+                        <span class="predict-odds" id="oddsDraw">3.2x</span>
+                    </button>
+                    <button class="predict-btn" data-result="lose">
+                        <span class="predict-label">客胜</span>
+                        <span class="predict-odds" id="oddsLose">2.8x</span>
+                    </button>
+                </div>
+                <div class="predict-amount">
+                    <input type="number" id="predictAmount" placeholder="输入预测金额" class="input-field">
+                    <button class="btn-primary" onclick="submitPrediction()">
+                        <i class="fas fa-check"></i>
+                        确认预测
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
