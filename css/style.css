@@ -1073,7 +1073,7 @@ body {
     gap: 15px;
 }
 
-/* ===== 响应式 ===== */
+/* ===== 响应式 - 手机适配优化 ===== */
 @media (max-width: 1024px) {
     .champion-content {
         grid-template-columns: 1fr;
@@ -1085,50 +1085,433 @@ body {
 }
 
 @media (max-width: 768px) {
+    /* 导航栏 */
+    .nav-container {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo i {
+        font-size: 1.2rem;
+    }
+    
+    /* 导航栏 */
+    .nav-container {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        font-size: 1rem;
+    }
+    
+    .logo i {
+        font-size: 1.2rem;
+    }
+    
     .nav-links {
         display: none;
     }
     
+    .btn-wallet {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .btn-wallet {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* 英雄区 */
+    .hero {
+        padding: 80px 15px 40px;
+        min-height: auto;
+    }
+    
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+    }
+    
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
     }
     
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .countdown-timer {
         gap: 10px;
     }
     
+    .stat-card {
+        padding: 15px 10px;
+    }
+    
+    .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    /* 倒计时 */
+    .countdown-timer {
+        gap: 8px;
+    }
+    
     .time-unit {
-        padding: 15px 20px;
-        min-width: 70px;
+        padding: 10px 12px;
+        min-width: 60px;
     }
     
     .time-value {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+    
+    .time-label {
+        font-size: 0.7rem;
+    }
+    
+    /* 按钮 */
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 20px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+    
+    /* Tokenomics */
+    .tokenomics {
+        padding: 50px 15px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
     }
     
     .token-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .token-card {
+        padding: 25px 20px;
+    }
+    
+    .token-value {
+        font-size: 2.5rem;
+    }
+    
+    .tax-badge {
+        display: block;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+    
+    /* 赛事预测 */
+    .matches {
+        padding: 50px 15px;
+    }
+    
+    .matches-filter {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.85rem;
     }
     
     .matches-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
     }
     
-    .hero-actions {
-        flex-direction: column;
-        align-items: center;
+    .match-card {
+        padding: 18px 15px;
+    }
+    
+    .match-header {
+        margin-bottom: 12px;
+    }
+    
+    .match-stage {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+    
+    .match-time {
+        font-size: 0.75rem;
+    }
+    
+    .team-flag {
+        font-size: 2.2rem;
+    }
+    
+    .team-name {
+        font-size: 0.9rem;
+    }
+    
+    .match-vs-divider {
+        font-size: 1.2rem;
+        padding: 0 10px;
+    }
+    
+    .match-pool {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .pool-value {
+        font-size: 1.2rem;
+    }
+    
+    .match-odds {
+        gap: 6px;
+    }
+    
+    .odds-btn {
+        padding: 8px 5px;
+        font-size: 0.8rem;
+    }
+    
+    .odds-btn .odds-value {
+        font-size: 1rem;
+    }
+    
+    .match-weight {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    
+    .weight-label {
+        font-size: 0.7rem;
+    }
+    
+    .weight-value {
+        font-size: 0.8rem;
+    }
+    
+    /* 冠军池 */
+    .champion {
+        padding: 50px 15px;
+    }
+    
+    .champion-content {
+        gap: 20px;
+    }
+    
+    .champion-pool,
+    .lock-section {
+        padding: 25px 20px;
+    }
+    
+    .pool-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .pool-amount {
+        font-size: 2rem;
+    }
+    
+    .dist-bar {
+        height: 35px;
+    }
+    
+    .dist-info {
+        height: 35px;
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+    
+    .lock-section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tier {
+        padding: 10px 12px;
+    }
+    
+    .tier-days {
+        font-size: 0.85rem;
+    }
+    
+    .tier-fee {
+        font-size: 0.8rem;
+    }
+    
+    .input-field,
+    .select-field {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* 数据看板 */
+    .dashboard {
+        padding: 50px 15px;
+    }
+    
+    .dash-card {
+        padding: 20px;
+    }
+    
+    .dash-card h4 {
+        font-size: 1rem;
+        margin-bottom: 15px;
     }
     
     .flywheel {
         justify-content: center;
     }
     
+    .flywheel-step {
+        padding: 10px;
+        min-width: 65px;
+    }
+    
+    .flywheel-step i {
+        font-size: 1.2rem;
+    }
+    
+    .flywheel-step span {
+        font-size: 0.7rem;
+    }
+    
     .flywheel > i {
         transform: rotate(90deg);
+        font-size: 0.8rem;
+    }
+    
+    .formula {
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+    
+    .stats-list {
+        gap: 10px;
+    }
+    
+    .stat-row {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* 页脚 */
+    .footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-logo {
+        font-size: 1.2rem;
+    }
+    
+    .footer-links a {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .footer-text {
+        font-size: 0.8rem;
+    }
+    
+    /* 弹窗 */
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+    
+    .modal-header {
+        padding: 15px 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .team .team-flag {
+        font-size: 3rem;
+    }
+    
+    .team .team-name {
+        font-size: 1rem;
+    }
+    
+    .match-vs {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+    
+    .predict-options {
+        gap: 8px;
+    }
+    
+    .predict-btn {
+        padding: 15px;
+    }
+    
+    .predict-odds {
+        font-size: 1rem;
+    }
+    
+    .predict-amount .input-field {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .time-value {
+        font-size: 1.5rem;
+    }
+    
+    .time-unit {
+        min-width: 50px;
+        padding: 8px 10px;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .token-value {
+        font-size: 2rem;
+    }
+    
+    .pool-amount {
+        font-size: 1.8rem;
+    }
+    
+    .flywheel-step {
+        min-width: 55px;
+        padding: 8px;
+    }
+    
+    .flywheel-step i {
+        font-size: 1rem;
+    }
+    
+    .flywheel-step span {
+        font-size: 0.65rem;
     }
 }
 
