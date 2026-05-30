@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORLD CUP 2026 - 链上世界杯赛事金融协议</title>
+    <title>WORLDCUP - 2026 FIFA World Cup 链上竞猜生态平台</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,7 +14,7 @@
         <div class="nav-container">
             <div class="logo">
                 <i class="fas fa-futbol"></i>
-                <span>WORLD CUP 2026</span>
+                <span>WORLDCUP</span>
             </div>
             <div class="nav-links">
                 <a href="#home" class="active">首页</a>
@@ -35,9 +35,10 @@
     <section id="home" class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
-            <div class="hero-badge">🔥 链上世界杯赛事金融协议</div>
-            <h1 class="hero-title">WORLD CUP 2026</h1>
-            <p class="hero-subtitle">基于 FIFA 世界杯 48队 / 104场比赛 的链上资金收敛系统</p>
+            <div class="hero-badge">🔥 链上世界杯赛事竞猜与预测生态平台</div>
+            <h1 class="hero-title">WORLDCUP</h1>
+            <p class="hero-subtitle">基于 2026 FIFA World Cup 48队 / 104场比赛</p>
+            <p class="hero-desc">赛事预测 + 阵营对抗 + 链上竞猜 + Token经济</p>
             <div class="hero-stats">
                 <div class="stat-card">
                     <div class="stat-value" id="totalPool">$0</div>
@@ -53,7 +54,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-value" id="lockAmount">0</div>
-                    <div class="stat-label">锁仓总量</div>
+                    <div class="stat-label">质押总量</div>
                 </div>
             </div>
             <div class="countdown-section">
@@ -101,13 +102,19 @@
                 <div class="token-card">
                     <div class="token-icon"><i class="fas fa-fire"></i></div>
                     <div class="token-value">1%</div>
-                    <div class="token-label">回购销毁</div>
-                    <div class="token-desc">通缩机制，价值捕获</div>
+                    <div class="token-label">回购销毁 WorldCup</div>
+                    <div class="token-desc">主币通缩机制</div>
+                </div>
+                <div class="token-card">
+                    <div class="token-icon"><i class="fas fa-flag"></i></div>
+                    <div class="token-value">1%</div>
+                    <div class="token-label">回购销毁冠军队</div>
+                    <div class="token-desc">冠军子币通缩</div>
                 </div>
                 <div class="token-card highlight">
                     <div class="token-icon"><i class="fas fa-trophy"></i></div>
                     <div class="token-value">1%</div>
-                    <div class="token-label">比赛奖池</div>
+                    <div class="token-label">预测竞猜奖池</div>
                     <div class="token-desc">104场比赛奖励分配</div>
                 </div>
                 <div class="token-card">
@@ -118,8 +125,8 @@
                 </div>
             </div>
             <div class="tax-info">
-                <span class="tax-badge">3% 交易税</span>
-                <span class="tax-desc">每笔交易自动分配至三大池</span>
+                <span class="tax-badge">4% 交易税</span>
+                <span class="tax-desc">每笔交易自动分配至四大池</span>
             </div>
         </div>
     </section>
@@ -131,6 +138,7 @@
                 <i class="fas fa-futbol"></i>
                 赛事预测市场
             </h2>
+            <p class="section-desc">用户参与每场比赛胜平负预测，瓜分预测奖池。中奖用户瓜分每场比赛奖池，未中奖用户可领回代币，参与下一轮比赛。（0手续费）</p>
             <div class="matches-filter">
                 <button class="filter-btn active" data-filter="all">全部</button>
                 <button class="filter-btn" data-filter="live">进行中</button>
@@ -160,64 +168,70 @@
                         <div class="dist-item">
                             <div class="dist-bar" style="width: 70%"></div>
                             <div class="dist-info">
-                                <span>冠军用户奖励</span>
+                                <span>冠军预测用户奖励</span>
                                 <span>70%</span>
                             </div>
                         </div>
                         <div class="dist-item">
                             <div class="dist-bar secondary" style="width: 20%"></div>
                             <div class="dist-info">
-                                <span>回购销毁</span>
+                                <span>回购冠军队</span>
                                 <span>20%</span>
                             </div>
                         </div>
                         <div class="dist-item">
                             <div class="dist-bar tertiary" style="width: 10%"></div>
                             <div class="dist-info">
-                                <span>再投资</span>
+                                <span>赛事发展基金</span>
                                 <span>10%</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="lock-section">
-                    <h3>锁仓参与</h3>
+                    <h3>质押参与</h3>
                     <div class="lock-info">
-                        <p>锁仓时间越长，权重越高（1x → 10x）</p>
+                        <p>质押时间越长，权重越高（1x → 5x）</p>
                         <div class="lock-tiers">
                             <div class="tier">
-                                <span class="tier-days">1-5天</span>
-                                <span class="tier-fee">6% 赎回费</span>
-                            </div>
-                            <div class="tier">
-                                <span class="tier-days">6-10天</span>
+                                <span class="tier-days">1-8天</span>
+                                <span class="tier-multiplier">5x 权重</span>
                                 <span class="tier-fee">5% 赎回费</span>
                             </div>
                             <div class="tier">
-                                <span class="tier-days">11-20天</span>
-                                <span class="tier-fee">3-4% 赎回费</span>
+                                <span class="tier-days">9-15天</span>
+                                <span class="tier-multiplier">4x 权重</span>
+                                <span class="tier-fee">4% 赎回费</span>
                             </div>
                             <div class="tier">
-                                <span class="tier-days">21-30天</span>
+                                <span class="tier-days">16-25天</span>
+                                <span class="tier-multiplier">3x 权重</span>
+                                <span class="tier-fee">3% 赎回费</span>
+                            </div>
+                            <div class="tier">
+                                <span class="tier-days">26-35天</span>
+                                <span class="tier-multiplier">2x 权重</span>
                                 <span class="tier-fee">2% 赎回费</span>
                             </div>
                             <div class="tier">
-                                <span class="tier-days">31-40天</span>
-                                <span class="tier-fee">1-1.5% 赎回费</span>
+                                <span class="tier-days">36-40天</span>
+                                <span class="tier-multiplier">1x 权重</span>
+                                <span class="tier-fee">1% 赎回费</span>
                             </div>
                         </div>
                     </div>
                     <div class="lock-action">
-                        <input type="number" id="lockAmount" placeholder="输入锁仓数量" class="input-field">
+                        <input type="number" id="lockAmount" placeholder="输入质押数量" class="input-field">
                         <select id="lockPeriod" class="select-field">
-                            <option value="5">5天 (1x权重)</option>
-                            <option value="10">10天 (2x权重)</option>
-                            <option value="20">20天 (5x权重)</option>
-                            <option value="40">40天 (10x权重)</option>
+                            <option value="8">8天 (5x权重)</option>
+                            <option value="15">15天 (4x权重)</option>
+                            <option value="25">25天 (3x权重)</option>
+                            <option value="35">35天 (2x权重)</option>
+                            <option value="40">40天 (1x权重)</option>
                         </select>
                         <button class="btn-primary" onclick="lockTokens()">
                             <i class="fas fa-lock"></i>
-                            立即锁仓
+                            立即质押
                         </button>
                     </div>
                 </div>
@@ -234,7 +248,7 @@
             </h2>
             <div class="dashboard-grid">
                 <div class="dash-card">
-                    <h4>资金飞轮</h4>
+                    <h4>系统飞轮</h4>
                     <div class="flywheel">
                         <div class="flywheel-step">
                             <i class="fas fa-exchange-alt"></i>
@@ -253,22 +267,22 @@
                         <i class="fas fa-arrow-right"></i>
                         <div class="flywheel-step">
                             <i class="fas fa-users"></i>
-                            <span>参与</span>
+                            <span>预测</span>
                         </div>
                         <i class="fas fa-arrow-right"></i>
                         <div class="flywheel-step">
                             <i class="fas fa-lock"></i>
-                            <span>锁仓</span>
+                            <span>质押</span>
                         </div>
                         <i class="fas fa-arrow-right"></i>
                         <div class="flywheel-step">
-                            <i class="fas fa-compress-arrows-alt"></i>
-                            <span>收敛</span>
+                            <i class="fas fa-fire"></i>
+                            <span>回购销毁</span>
                         </div>
                         <i class="fas fa-arrow-right"></i>
                         <div class="flywheel-step">
                             <i class="fas fa-crown"></i>
-                            <span>结算</span>
+                            <span>冠军池分配</span>
                         </div>
                     </div>
                 </div>
@@ -299,7 +313,7 @@
                             <span id="activePredictions">0</span>
                         </div>
                         <div class="stat-row">
-                            <span>平均锁仓时长</span>
+                            <span>平均质押时长</span>
                             <span id="avgLockTime">0天</span>
                         </div>
                     </div>
@@ -314,7 +328,7 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <i class="fas fa-futbol"></i>
-                    <span>WORLD CUP 2026</span>
+                    <span>WORLDCUP</span>
                 </div>
                 <div class="footer-links">
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -323,8 +337,8 @@
                     <a href="#"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="footer-text">
-                    <p>基于 PGP Chain 构建的链上世界杯赛事金融协议</p>
-                    <p>© 2026 WORLD CUP Protocol. All rights reserved.</p>
+                    <p>基于 PGP Chain 构建的 2026 FIFA World Cup 链上竞猜生态平台</p>
+                    <p>© 2026 WORLDCUP Protocol. All rights reserved.</p>
                 </div>
             </div>
         </div>

@@ -207,14 +207,14 @@ function lockTokens() {
     const period = document.getElementById('lockPeriod').value;
     
     if (!amount || amount <= 0) {
-        alert('请输入锁仓数量');
+        alert('请输入质押数量');
         return;
     }
     
-    const weights = { 5: 1, 10: 2, 20: 5, 40: 10 };
+    const weights = { 8: 5, 15: 4, 25: 3, 35: 2, 40: 1 };
     const weight = weights[period];
     
-    alert(`锁仓成功！\n数量: ${amount}\n时长: ${period}天\n权重: ${weight}x`);
+    alert(`质押成功！\n数量: ${amount}\n时长: ${period}天\n权重: ${weight}x`);
 }
 
 // ===== 钱包连接 =====
