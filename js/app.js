@@ -201,7 +201,7 @@ function submitPrediction() {
     closeModal();
 }
 
-// ===== 锁仓功能 =====
+// ===== 质押功能 =====
 function lockTokens() {
     const amount = document.getElementById('lockAmount').value;
     const period = document.getElementById('lockPeriod').value;
